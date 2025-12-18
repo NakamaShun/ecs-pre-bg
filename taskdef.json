@@ -11,10 +11,7 @@
       "image": "nginx:alpine",
       "essential": true,
       "portMappings": [
-        {
-          "containerPort": 80,
-          "protocol": "tcp"
-        }
+        { "containerPort": 80, "protocol": "tcp" }
       ],
       "command": [
         "sh",
@@ -24,3 +21,4 @@
     }
   ]
 }
+
