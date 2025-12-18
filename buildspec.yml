@@ -2,7 +2,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "no build"
+      - echo "=== taskdef.json preview ==="
+      - cat taskdef.json | head -n 80
 artifacts:
   files:
     - appspec.yml
