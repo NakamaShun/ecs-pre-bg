@@ -5,6 +5,7 @@
   "cpu": "512",
   "memory": "1024",
   "executionRoleArn": "arn:aws:iam::818111885437:role/ecs-pre-bg-task-exec-role",
+  "taskRoleArn": "arn:aws:iam::818111885437:role/ecs-pre-bg-task-exec-role",
   "containerDefinitions": [
     {
       "name": "nginx",
