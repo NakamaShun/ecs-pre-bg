@@ -17,7 +17,7 @@
       "command": [
         "sh",
         "-c",
-        "printf '<html><body style=\"background:green;color:white;font-size:48px;display:flex;align-items:center;justify-content:center;height:100vh;\">GREEN</body></html>' > /usr/share/nginx/html/index.html && nginx -g \"daemon off;\""
+        "printf '<html><body style=\"background:blue;color:white;font-size:48px;display:flex;align-items:center;justify-content:center;height:100vh;\">GREEN</body></html>' > /usr/share/nginx/html/index.html && nginx -g \"daemon off;\""
       ]
     }
   ]
