@@ -1,5 +1,5 @@
 {
-  "family": "ecs-pre-bg-family",
+  "family": "ecs-new-bg-family",
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "512",
