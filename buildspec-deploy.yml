@@ -4,7 +4,7 @@ env:
   variables:
     AWS_REGION: ap-northeast-1
     ECS_CLUSTER: ecs-pre-bg-cluster
-    ECS_SERVICE: ecs-new-bg-service
+    ECS_SERVICE: ecs-new-bg-cd
     TASKDEF_FILE: taskdef.json
 
 phases:
