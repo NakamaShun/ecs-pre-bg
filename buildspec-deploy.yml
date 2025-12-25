@@ -1,0 +1,26 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_REGION: ap-northeast-1
+    ECS_CLUSTER: ecs-pre-bg-cluster
+    ECS_SERVICE: ecs-new-bg-service
+    TASKDEF_FILE: taskdef.json
+
+phases:
+  install:
+    commands:
+      - yum -y install jq
+  build:
+    commands:
+      - echo "Register task definition from ${TASKDEF_FILE}"
+      - aws ecs register-task-definition --region ${AWS_REGION} --cli-input-json file://${TASKDEF_FILE} > out.json
+      - export TASK_DEF_ARN=$(jq -r '.taskDefinition.taskDefinitionArn' out.json)
+      - echo "Registered: ${TASK_DEF_ARN}"
+
+      - echo "Update ECS service: ${ECS_CLUSTER}/${ECS_SERVICE}"
+      - aws ecs update-service --region ${AWS_REGION} --cluster ${ECS_CLUSTER} --service ${ECS_SERVICE} --task-definition ${TASK_DEF_ARN}
+
+artifacts:
+  files:
+    - out.json
