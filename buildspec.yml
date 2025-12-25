@@ -6,5 +6,5 @@ phases:
       - cat taskdef.json | head -n 80
 artifacts:
   files:
-    - appspec.yml
+    - buildspec-deploy.yml
     - taskdef.json
