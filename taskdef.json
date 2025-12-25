@@ -6,14 +6,6 @@
   "memory": "1024",
   "executionRoleArn": "arn:aws:iam::818111885437:role/ecs-pre-bg-task-exec-role",
   "taskRoleArn": "arn:aws:iam::818111885437:role/ecs-pre-bg-task-exec-role",
-  "logConfiguration": {
-  "logDriver": "awslogs",
-  "options": {
-    "awslogs-group": "new-ecs-log_group-backend",
-    "awslogs-region": "ap-northeast-1",
-    "awslogs-stream-prefix": "ecs"
-  }
-}
   "containerDefinitions": [
     {
       "name": "nginx",
@@ -22,6 +14,14 @@
       "portMappings": [
         { "containerPort": 80, "protocol": "tcp" }
       ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "new-ecs-log_group-backend",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
       "command": [
         "sh",
         "-c",
@@ -30,4 +30,5 @@
     }
   ]
 }
+
 
