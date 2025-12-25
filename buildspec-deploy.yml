@@ -16,9 +16,9 @@ phases:
       - echo "Register task definition from ${TASKDEF_FILE}"
       - aws ecs register-task-definition --region ${AWS_REGION} --cli-input-json file://${TASKDEF_FILE} > out.json
       - export TASK_DEF_ARN=$(jq -r '.taskDefinition.taskDefinitionArn' out.json)
-      - echo "Registered: ${TASK_DEF_ARN}"
+      - echo "Registered ${TASK_DEF_ARN}"
 
-      - echo "Update ECS service: ${ECS_CLUSTER}/${ECS_SERVICE}"
+      - echo "Update ECS service ${ECS_CLUSTER}/${ECS_SERVICE}"
       - aws ecs update-service --region ${AWS_REGION} --cluster ${ECS_CLUSTER} --service ${ECS_SERVICE} --task-definition ${TASK_DEF_ARN}
 
 artifacts:
