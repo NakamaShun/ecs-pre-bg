@@ -17,7 +17,7 @@
       "command": [
         "sh",
         "-c",
-        "mkdir -p /usr/share/nginx/html/new && printf '<html><body style=\"background:green;color:white;font-size:48px;display:flex;align-items:center;justify-content:center;height:100vh;\">New GREEN</body></html>' > /usr/share/nginx/html/new/index.html && nginx -g 'daemon off;'"
+        "mkdir -p /usr/share/nginx/html/new && printf '<html><body style=\"background:blue;color:white;font-size:48px;display:flex;align-items:center;justify-content:center;height:100vh;\">New BLUE</body></html>' > /usr/share/nginx/html/new/index.html && nginx -g 'daemon off;'"
       ]
     }
   ]
